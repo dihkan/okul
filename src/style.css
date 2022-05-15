@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #bcbcbc;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+}
+
+.aside {
+    width: 250px;
+    background-color: #111;
+    height: 100%;
+    padding: 20px;
+    margin: 0px 0px 0px 0px;
+    color: #eee;
+    position: fixed;
+    z-index: 1;
+}
+
+.icerik {
+    margin-left: 250px;
+    padding-left: 50px;
+    padding-top: 10px;
+}
+
+.icerik1 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.kutu {
+    background-color: #eee;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    padding: 20px;
+    overflow: hidden;
+    margin: 10px;
+    height: 50%;
+    border: 1px solid #222;
+    box-shadow: 2px 2px 5px #333;
+}
+
+.baslik {
+    font-size: 2rem;
+    text-align: center;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+}
+
+.resim {
+    width: 100%;
+    border-radius: 20px;
+    border: 2px solid #333;
+    box-shadow: 2px 2px 10px #111;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.metin {
+    color: #222;
+    font-size: 13px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.logo {
+    margin-bottom: 10px;
+}
+
+.menu {
+    list-style: none;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+.menu li {
+    margin: 10px;
+}
+
+.menu li a {
+    color: #aea343;
+    text-decoration: none;
+}
