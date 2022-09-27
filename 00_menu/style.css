@@ -17,10 +17,12 @@
     height: 100px;
     line-height: 100px;
     text-align: center;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
 
 .menu {
     background-color: #333;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
 
 .menuList {
@@ -44,7 +46,7 @@
 }
 
 .menuList li ul li {
-    width: 200px;
+    width: 15em;
 }
 
 .menuList li:hover ul {
