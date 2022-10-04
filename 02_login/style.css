@@ -1,0 +1,51 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    background-color: #333;
+}
+
+.form-content {
+    width: 90%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin: 0 auto;
+}
+
+.container {
+    width: 25%;
+    margin: 0 auto;
+    margin-top: 200px;
+    box-shadow: 5px 5px 10px #eee;
+}
+
+fieldset {
+    padding: 20px;
+}
+
+.inputForm {
+    display: flex;
+}
+
+.icon {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    font-size: 26px;
+}
+
+#userName {
+    padding: 10px;
+    width: 80%;
+    margin: 10px;
+    background-color: #ddd;
+}
+
+#pass {
+    padding: 10px;
+    width: 80%;
+    margin: 10px;
+    background-color: #ddd;
+}
