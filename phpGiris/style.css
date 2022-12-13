@@ -1,0 +1,26 @@
+.container{
+    width:80%;
+    margin: 0 auto;
+
+    background-color: #e45e45;
+}
+
+.header{
+    height: 120px;
+    background-color: aquamarine;
+}
+
+.menu{
+    height: 40px;
+
+}
+
+.content{
+    height: 400px;
+    background-color: bisque;
+}
+
+.footer{
+    height: 30px;
+    background-color: blueviolet;
+}

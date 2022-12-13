@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .container {
+            border: 1px solid #333;
+            width: 40%;
+            background-color: bisque;
+
+            margin: 0 auto;
+            box-shadow: 3px 3px 10px #333;
+            border-radius: 10px;
+            border-bottom-left-radius: 50px;
+            padding-left: 10px;
+            text-align: center;
+        }
+
+        .tablom {
+            width: 100%;
+        }
+
+        .inputText {
+            padding: 6px;
+            width: 70%;
+            margin: 20px;
+            font-size: 12px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="aaa.php" method="post">
+            <table class="tablom">
+                <tr>
+                    <td>Üye Adı</td>
+                    <td><input type="text" name="uyeAdi" class="inputText"></td>
+                </tr>
+                <tr>
+                    <input type="radio" name="cins" value="erkek" id="">
+                    <input type="radio" name="cins1" value="kadın" id="">
+                    <input type="checkbox" name="" id="">
+                    <select name="sehirler" id="">
+                        <option value="1">Adana</option>
+                        <option value="2">Adıyaman</option>
+                    </select>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="text" name="email" class="inputText"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" name="password" class="inputText"></td>
+                </tr>
+
+            </table>
+        </form>
+    </div>
+</body>
+
+</html>

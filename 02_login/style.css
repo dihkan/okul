@@ -14,11 +14,10 @@ body {
     margin: 0 auto;
     background-color: #eee;
 }
-
 .container {
     width: 25%;
     margin: 0 auto;
-    margin-top: 200px;
+    margin-top: 200px;  
     box-shadow: 5px 5px 10px #eee;
 }
 
@@ -36,7 +35,9 @@ fieldset {
     color: #fff;
     font-size: 26px;
 }
-
+legend{
+    color: #333;
+}
 #userName {
     padding: 10px;
     width: 80%;
