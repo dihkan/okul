@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .container {
+    width: 80%;
+    margin: 10px auto;
+    background-color: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #222;
+    box-shadow: 4px 4px 8px #333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+      .content{
+        background-color: brown;
+        width:40%;
+        height: 400px;
+      }
+      .sozlesme{
+        width: 40%;
+        height: 400px;
+        background-color: #666;
+      }
+    </style>
+  </head>
+  <body>
+      <div class="container">
+        <div class="butonlar">
+          <button id="gizle">Gizle / Göster</button> <br>
+          <button id="renk">Renk Değiştir</button> <br> <br>
+          <input type="text" id="yazi"> <br> <br>
+
+          <select name="" id="sehir">
+            <option value="">Şehir Seçiniz</option>
+            <option value="Adana">Adana</option>
+            <option value="Adıyaman">Adıyaman</option>
+            <option value="Afyon">Afyon</option>
+            <option value="Ağrı">Ağrı</option>
+          </select>
+        </div>
+        <div class="content"></div>
+        <div class="sozlesme">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cumque natus repellat, id aliquid possimus laboriosam omnis iusto eos laborum eveniet, nesciunt rem excepturi iure. Minima similique, eveniet quidem minus quo accusantium reprehenderit provident debitis, et culpa, est illo dolor adipisci ullam eum eaque. Error necessitatibus iusto fuga maxime omnis voluptas dignissimos. Architecto numquam fuga enim provident suscipit dolorem unde laborum consequatur blanditiis aut impedit officiis repudiandae ducimus odit, natus dolor quod illo dolorum autem sunt. Consequatur at expedita veritatis, ipsam eligendi ex ab commodi autem minus magnam rem tempora itaque odit ratione dolorem. Unde excepturi ratione, vitae earum beatae dolorem?
+          <br><br>
+          <input type="checkbox" id="onay">
+          <input type="submit" value="Kayıt" id="kayit" disabled>
+        </div>
+      </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+
+    <script>
+      $("#gizle").on("click" , function(){
+        $(".content").toggle();
+      })
+
+      $("#renk").on("click" , function(){
+        $(".content").css("background-color" , "#997eea")
+      })
+
+      $("#yazi").on("keyup" , function(){
+        $(".content").html($("#yazi").val());
+      })
+      $("#onay").on("click" , function(){
+        console.log($("#onay").prop("checked"));
+        if($("#onay").prop("checked") == 1)
+        {
+          $("#kayit").prop("disabled", false);
+        }else{
+          $("#kayit").prop("disabled", true);
+
+        }
+      })
+
+      $("#sehir").on("change", function(){
+        alert($("#sehir").val());
+      })
+    </script>
+  </body>
+</html>

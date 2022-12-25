@@ -12,11 +12,12 @@ body {
     padding-top: 30px;
     padding-bottom: 30px;
     margin: 0 auto;
+    background-color: #eee;
 }
-
 .container {
     width: 25%;
     margin: 0 auto;
+<<<<<<< HEAD
     margin-top: 200px;
     box-shadow: 5px 5px 40px #666;
     background-color: #223123;
@@ -72,6 +73,10 @@ body {
     width: 100%;
     margin-top: 20px;
     font-size: 18px;
+=======
+    margin-top: 200px;  
+    box-shadow: 5px 5px 10px #eee;
+>>>>>>> 0d782556bb91e51f395006691dd97f1cc2cabea9
 }
 
 fieldset {
@@ -93,7 +98,9 @@ legend {
     color: #fff;
     font-size: 26px;
 }
-
+legend{
+    color: #333;
+}
 #userName {
     padding: 10px;
     width: 80%;

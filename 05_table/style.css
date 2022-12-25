@@ -1,0 +1,38 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: #aaa;
+}
+.tablo{
+    width: 1000px;
+    margin: 0 auto;
+    border: 2px solid #333;
+    border-radius: 20px;
+    height: 500px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.tablo1{
+    width: 1000px;
+    height: 40px;
+    border-bottom: 1px solid #333;
+}
+.resim{
+    padding: 10px;
+    border: 2px solid green;
+    margin: 10px;
+}
+.baslik{
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+}
+
+a{
+    color: #333;
+    text-decoration: none;
+    
+}
