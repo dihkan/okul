@@ -14,8 +14,6 @@
     <div class="row">
         <div class="col-md-12">
         <table class="table table-condensed">
-
-      
 <?php
 
 $b = new mysqli("localhost", "root" , "","okul");
@@ -30,7 +28,7 @@ foreach ($uyeler as $key) {  ?>
             <td><?= $key['username'] ?></td>
             <td><?= $key['country'] ?></td>
             <td><?= $key['email'] ?></td>
-            <td>
+            <td> 
                 <form action="sil.php" method="post">
                     <input type="hidden" name="userId" value="<?= $key['userId']?>">
                     <input type="submit" value="Delete" class="btn btn-danger btn-sm" name="delete">

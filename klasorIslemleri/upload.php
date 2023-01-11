@@ -15,7 +15,6 @@
             if(!is_dir($_SERVER['DOCUMENT_ROOT']."/okul/klasorIslemleri/".$klasorAdi)){
                 mkdir($_SERVER['DOCUMENT_ROOT']."/okul/klasorIslemleri/".$klasorAdi , 0777 , true); 
             }
-            
                 $dosyaAdi = uniqid();
                 $dizi1 = explode("." , $_FILES['resim']['name']);
                 $maxFileLimit = 1024 * 1024  * 15;
@@ -41,7 +40,6 @@
         }
         
         $baglanti->query("INSERT INTO `users` (`username`,`email`,`country` , `photo`  ) VALUES ('$username','$email','$country' , '$path')") or die("Error");
-      
     }
 
     header("Refresh:2;url=users.php");
