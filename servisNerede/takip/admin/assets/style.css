@@ -1,0 +1,18 @@
+#menu {
+    list-style: none;
+    width: 100%;
+}
+
+#menu li {
+    margin-left: 1.5em;
+    line-height: 2em;
+}
+
+#menu li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.menu {
+    color: #fff;
+}
