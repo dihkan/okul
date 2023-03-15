@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: #333;
+    background-color: #222;
 }
 
 .form-content {
@@ -17,12 +17,76 @@ body {
 .container {
     width: 25%;
     margin: 0 auto;
+<<<<<<< HEAD
+    margin-top: 200px;
+    box-shadow: 5px 5px 40px #666;
+    background-color: #223123;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border: 1px solid #eee;
+    padding: 20px;
+}
+
+.bullets {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.bullet {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: #eee;
+    position: relative;
+    left: 50px;
+    top: 20px;
+}
+
+.bullet1 {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: #eee;
+    position: relative;
+    right: 50px;
+    top: 20px;
+}
+
+.link {
+    color: #aaa;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: #decb78;
+}
+
+.buton {
+    background-color: #decb78;
+    color: #333;
+    padding: 12px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 18px;
+=======
     margin-top: 200px;  
     box-shadow: 5px 5px 10px #eee;
+>>>>>>> 0d782556bb91e51f395006691dd97f1cc2cabea9
 }
 
 fieldset {
     padding: 20px;
+}
+
+legend {
+    font-size: 30px;
+    text-align: center;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
 
 .inputForm {
@@ -31,7 +95,6 @@ fieldset {
 
 .icon {
     padding: 10px;
-    background-color: #333;
     color: #fff;
     font-size: 26px;
 }
