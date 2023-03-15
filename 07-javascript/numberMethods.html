@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number"  id="sayi" onchange="sayiGoster()" placeholder="Bir sayı girin">
+    <div id="sonuc">
+
+    </div>
+
+    <script>
+        var tutulanSayi = Math.floor(Math.random() * 100); 
+        var sayac = 0;
+
+        function sayiGoster(){
+            sayac++;
+            const kutu = document.querySelector("#sayi");
+            var sayi = kutu.value;
+            if(sayac<5){
+
+                if(sayi<tutulanSayi)
+                {
+                    alert("Sayıyı yükseltin")
+                }else if(sayi>tutulanSayi)
+                {
+                    alert("Sayıyı küçültün");
+                }else{
+                    alert("Aferin Sayıyı buldun " + sayac + " denemede buldunuz");
+                }
+            }else{
+                alert("Hadi lennnn ... btti tüm hakların");
+            }
+        } 
+    </script>
+</body>
+</html>

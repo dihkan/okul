@@ -1,3 +1,39 @@
+<?php
+    require_once "db.php";
+    if(isset($_POST['changeImage']) && $_FILES['resim']['error'] ==0){
+                $dosyaAdi = uniqid();
+                $dizi1 = explode("." , $_FILES['resim']['name']);
+                $maxFileLimit = 1024 * 1024  * 15;
+           
+                if($_FILES['resim']['size'] > $maxFileLimit){
+                    echo "Dosya boyutunuz çok fazla.. Max 5MB dosya yükleyebilirsiniz";
+                }else{ 
+                    $uzanti = $dizi1[count($dizi1) - 1];
+                    $izinliUzantilar = [
+                    "image/png" , 
+                    "image/jpeg", 
+                    "image/gif"
+                    ];
+                $type = ($_FILES['resim']['type']);
+                
+                if(in_array($type, $izinliUzantilar)) {
+                    $path = $dosyaAdi.".".$uzanti;
+                    move_uploaded_file($_FILES['resim']['tmp_name'], $_SERVER['DOCUMENT_ROOT']."/okul/klasorIslemleri/upload/".$path);
+                }else{ 
+                    echo "Error - Dosya tipi uygun değil";
+                }
+            
+            }
+
+            $userId = $_POST['userId'];
+            $resimAdi = $path;
+            
+            $baglanti->query("UPDATE users SET photo = '".$resimAdi."' WHERE userId ='".$userId."'");
+
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,22 +52,27 @@
         <table class="table table-condensed">
 <?php
 
-$b = new mysqli("localhost", "root" , "","okul");
-
 $sql = "SELECT * FROM users";
 
-$uyeler = $b->query($sql)->fetch_all(MYSQLI_ASSOC);
+$uyeler = $baglanti->query($sql)->fetch_all(MYSQLI_ASSOC);
 
 foreach ($uyeler as $key) {  ?>
         <tr>
-            <td><img src="upload/<?= $key['photo'] ?>" width="120" alt=""></td>
+            <td width="200">
+                <img src="upload/<?= $key['photo'] ?>" width="120" alt=""> <br> <br>
+                <form action="users.php" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="userId" value="<?= $key['userId']?>">
+                    <input type="file" name="resim" class="form-control"> <br>
+                    <input type="submit" value="Change" name="changeImage" class="btn btn-primary btn-sm form-control">
+                </form>
+            </td>
             <td><?= $key['username'] ?></td>
             <td><?= $key['country'] ?></td>
             <td><?= $key['email'] ?></td>
             <td> 
                 <form action="sil.php" method="post">
                     <input type="hidden" name="userId" value="<?= $key['userId']?>">
-                    <input type="submit" value="Delete" class="btn btn-danger btn-sm" name="delete">
+                    <input type="submit" value="Delete" class="btn btn-danger btn-sm form-control" name="delete">
                 </form>
             </td>
         </tr>

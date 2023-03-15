@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            width: 80%;
+            margin: 0 auto;
+            justify-content: space-evenly;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="deneme"></div>
+        <div class="tire"></div>
+        <div class="deneme1"></div>
+        
+    </div>
+
+    <script>
+    var dizi = [];
+    var dizi1 = [];
+
+    const deneme = document.querySelector(".deneme");
+    const deneme1 = document.querySelector(".deneme1");
+    const tire = document.querySelector(".tire");
+    for (let i = 0; i < 10; i++) {
+       dizi[i] = "*";
+       dizi1[i] = "*";
+    }
+    
+    console.table(dizi);
+  /*  for (let index = 0; index < dizi.length; index++) {
+       deneme.innerHTML += dizi[index];   
+    }
+*/
+    dizi.forEach((eleman,i) =>{
+        if(i!= 7 && i!= 6 && i!= 3 && i!= 2)
+        {
+            deneme.innerHTML += "<br>"+eleman+" ";
+        }else{
+            deneme.innerHTML += "<br>"+ "&nbsp; &nbsp;";
+        }
+        dizi1.forEach((eleman1,j) =>{
+            if(i<2 || i>7 || i==4 || i==5 || (j>7))
+            {
+                deneme.innerHTML += eleman1+" ";
+            }else{
+                deneme.innerHTML += "&nbsp; &nbsp;";
+            }
+        })
+    })
+    dizi.forEach((eleman,i) =>{
+        tire.innerHTML += "<br>";
+        dizi1.forEach((eleman1,j) =>{
+            if(i==4 || i==5)
+            {
+                tire.innerHTML += eleman+" ";
+            }
+        })
+    })
+
+    dizi.forEach((eleman,i) =>{
+        deneme1.innerHTML += "<br>"+eleman+" ";
+        dizi1.forEach((eleman1,j) =>{
+            if(i<2 || i>7  || (j>7 || j<1))
+            {
+                deneme1.innerHTML += eleman1+" ";
+            }else{
+                deneme1.innerHTML += "&nbsp; &nbsp;";
+            }
+        })
+    })
+
+
+    </script>
+</body>
+</html>

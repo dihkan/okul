@@ -1,6 +1,6 @@
 <?php
     if($_POST['delete']){
-        $b = new mysqli("localhost", "root" , "","okul");
+        require_once "db.php";
         $userId = $_POST['userId'];
         
         $sec = $b->query("SELECT * FROM users WHERE userId='$userId'")->fetch_array(MYSQLI_ASSOC);

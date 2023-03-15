@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.css' integrity='sha512-bR79Bg78Wmn33N5nvkEyg66hNg+xF/Q8NA8YABbj+4sBngYhv9P8eum19hdjYcY7vXk/vRkhM3v/ZndtgEXRWw==' crossorigin='anonymous' />
+    <style>
+        .kutu {
+            padding: 15px;
+            width: 60px;
+            font-size: 30px;
+            text-align: center;
+        }
+        
+        .sonuclar {
+            padding: 5px;
+            color: #ae4545;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body class="bg-dark">
+    <div class="container">
+
+        <div class="bg-primary p-3 mb-4 d-flex justify-content-between">
+            <button onclick="baslat()" class="btn btn-dark">Oyunu Başlat</button>
+            <div class="uyari"></div>
+        </div>
+        <div id="tahminDiv" class="d-none">
+            <div class="row">
+                <div class="col-2">
+                    <input type="text" id="bir" class="kutu" maxlength="1" onkeyup="kontrol(1)">
+                </div>
+                <div class="col-2">
+                    <input type="text" id="iki" class="kutu" maxlength="1" onkeyup="kontrol(2) ">
+                </div>
+                <div class="col-2">
+                    <input type="text " id="uc" class="kutu" maxlength="1" onkeyup="kontrol(3) ">
+                </div>
+                <div class="col-2">
+                    <input type="text " id="dort" class="kutu" maxlength="1" onkeyup="kontrol(4) ">
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-danger btn-lg" onclick="dene()">Dene !</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 bg-light mt-4 fs-2" id="result">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        var sayiDizisi = [];
+        var a = 0;
+        var b = 0;
+        var bir = document.querySelector("#bir");
+        var iki = document.querySelector("#iki");
+        var uc = document.querySelector("#uc");
+        var dort = document.querySelector("#dort");
+        var uyari = document.querySelector(".uyari");
+        var result = document.querySelector("#result");
+
+        function baslat() {
+            a = 0;
+            b = 0;
+            for (let i = 0; i <= 3; i++) {
+                var sonuc = sayiUret(i);
+            }
+            console.log(sayiDizisi);
+            var taminDiv = document.querySelector("#tahminDiv");
+            tahminDiv.classList.remove("d-none");
+            result.innerHTML = "";
+            bir.focus();
+        }
+
+        function sayiUret(i) {
+            return sameControl(Math.floor(Math.random() * 10), i);
+        }
+
+        function sameControl(deger, i) {
+            if (sayiDizisi.indexOf(deger) == -1) {
+                if (i == 0 && deger == 0) {
+                    sayiUret(i);
+                } else {
+                    sayiDizisi[i] = deger;
+                }
+            } else {
+                sayiUret(i);
+            }
+        }
+
+        var tahminDizisi = [];
+
+        function kontrol(order = 0) {
+
+            var sayiBir = bir.value;
+            var sayiIki = iki.value;
+            var sayiUc = uc.value;
+            var sayiDort = dort.value;
+            if (sayiBir == 0) {
+                uyari.innerHTML = "<h3>Tahmininiz 0 (Sıfır) ile başlayamaz";
+                bir.value = "";
+            } else {
+                uyari.innerHTML = "";
+                if (sayiBir == sayiIki && sayiIki != '') {
+                    uyari.innerHTML = "<h3>Aynı rakam kullanamazsınız. </h3>";
+                    iki.value = "";
+                } else if (((sayiIki == sayiUc) || (sayiUc == sayiBir)) && sayiUc != '' && sayiIki != '') {
+                    uyari.innerHTML = "<h3>Aynı rakam kullanamazsınız ! </h3>";
+                    uc.value = "";
+                } else if ((sayiUc == sayiDort || sayiDort == sayiBir || sayiDort == sayiIki) && sayiDort != '' && sayiUc != '' ) {
+                    uyari.innerHTML = "<h3>Aynı rakam kullanamazsınız !! </h3>";
+                    dort.value = "";
+                } else {
+                    if (order == 1) {
+                        iki.focus();
+                    } else if (order == 2) {
+                        uc.focus();
+                    } else if (order == 3) {
+                        dort.focus();
+                    }
+                }
+            }
+        }
+
+        function dene() {
+            var sayiBir = bir.value;
+            var sayiIki = iki.value;
+            var sayiUc = uc.value;
+            var sayiDort = dort.value;
+            if (sayiBir == '' || sayiIki == '' || sayiUc == '' || sayiDort == '') {
+                uyari.innerHTML = "<h3>Kutuları boş bıraktınız</h3>";
+
+            } else {
+
+                var sayi = sayiBir + " " + sayiIki + " " + sayiUc + " " + sayiDort;
+                degerlendir(sayi);
+            }
+            bir.value = "";
+            iki.value = "";
+            uc.value = "";
+            dort.value = "";
+            bir.focus();
+        }
+
+        function degerlendir(sayi) {
+            a = 0;
+            b = 0;
+
+            var tahminDizi = sayi.split(" ");
+            sayiDizisi.forEach((element, i) => {
+
+                tahminDizi.forEach((tahmin, j) => {
+                    if (element == tahmin && i == j) {
+                        a++;
+                    } else if (element == tahmin && i != j) {
+                        b++;
+                    }
+                });
+            });
+
+            if (a == 4) {
+                result.innerHTML += "<div class='sonuclar'><br>" + sayi + " Tebrikler bildiniz</div>";
+            } else {
+                result.innerHTML += "<div class='sonuclar'> <br>" + sayi + " => " + a + " A " + b + " B  </div> ";
+            }
+
+        }
+    </script>
+</body>
+
+</html>

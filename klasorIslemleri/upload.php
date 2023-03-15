@@ -1,5 +1,5 @@
 <?php
-    $baglanti = new mysqli("localhost" , "root" , "" , "okul");
+    require_once "db.php";
 
     if($_POST)
     {
