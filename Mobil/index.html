@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            background-color: #124889;
+            width: 100px;
+            height: 100px;
+        }
+        
+        #box2 {
+            background-color: #e45123;
+            width: 100px;
+            height: 100px;
+        }
+        
+        #box3 {
+            background-color: #bcb543;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1" class="kutular"></div>
+    <div id="box2" class="kutular"></div>
+    <div id="box3" class="kutular"></div>
+    <button class="goster">Kutuları Göster</button>
+
+    <input type="text" id="yazi">
+</body>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js' integrity='sha512-6DC1eE3AWg1bgitkoaRM1lhY98PxbMIbhgYCGV107aZlyzzvaWCW1nJW2vDuYQm06hXrW0As6OGKcIaAVWnHJw==' crossorigin='anonymous'></script>
+<script>
+    $("#box1 ").on("click ", function() {
+        $("#box2 ").toggle(200);
+    })
+
+    $("#box2 ").on("click ", function() {
+        $("#box3 ").toggle(200);
+    });
+    $("#box3 ").on("click ", function() {
+        $(".kutular ").hide();
+    })
+    $(".goster ").on("click ", function() {
+        $(".kutular ").show(100);
+    });
+    $("#yazi").on("keyup", function() {
+        $(".kutular").html($("#yazi").val())
+    })
+</script>
+
+</html>

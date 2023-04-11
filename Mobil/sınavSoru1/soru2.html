@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jQuery Sınav Sorusu</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Resmin üzerindeyken açıklama göster
+            $("#resim1").on("mouseover", function() {
+                $("#aciklama").html("Bu resim bir doğa manzarasıdır.");
+            });
+            $("#resim2").on("mouseover", function() {
+                $("#aciklama").html("Bu resim bir hayvan fotoğrafıdır.");
+            });
+            $("#resim3").on("mouseover", function() {
+                $("#aciklama").html("Bu resim bir şehir manzarasıdır.");
+            });
+        });
+    </script>
+    <style>
+        #aciklama {
+            margin-top: 10px;
+            font-style: italic;
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Resim Açıklaması</h1>
+    <p>Lütfen bir resim seçin:</p>
+    <img src="resim1.jpg" id="resim1" width="200" height="120" alt="Resim 1">
+    <img src="resim2.jpg" id="resim2" width="200" height="120" alt="Resim 2">
+    <img src="resim3.jpg" id="resim3" width="200" height="120" alt="Resim 3">
+    <div id="aciklama"></div>
+</body>
+
+</html>

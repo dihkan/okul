@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jQuery Sınav Sorusu</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Renk seçenekleri
+            $("#kirmizi").click(function() {
+                $("#renk").text("Kırmızı");
+            });
+            $("#yesil").click(function() {
+                $("#renk").text("Yeşil");
+            });
+            $("#mavi").click(function() {
+                $("#renk").text("Mavi");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>Renk Seçimi</h1>
+    <p>Lütfen bir renk seçin:</p>
+    <ul>
+        <li><a href="#" id="kirmizi">Kırmızı</a></li>
+        <li><a href="#" id="yesil">Yeşil</a></li>
+        <li><a href="#" id="mavi">Mavi</a></li>
+    </ul>
+    <h2>Seçilen Renk:</h2>
+    <p id="renk"></p>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jQuery Sınav Sorusu</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Form elemanı değiştiğinde
+            $("input, select, textarea").change(function() {
+                // Değişen elemanın değerini al
+                var yeniDeger = $(this).val();
+                // Altındaki div öğesine değeri göster
+                $(this).next("div").text(yeniDeger);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>Form Değeri Gösterme</h1>
+    <p>Lütfen bir form elemanı seçin:</p>
+    <label for="isim">İsim:</label>
+    <input type="text" id="isim" name="isim">
+    <div></div>
+    <label for="cinsiyet">Cinsiyet:</label>
+    <select id="cinsiyet" name="cinsiyet">
+		<option value="">Seçiniz</option>
+		<option value="erkek">Erkek</option>
+		<option value="kadın">Kadın</option>
+	</select>
+    <div></div>
+    <label for="mesaj">Mesaj:</label>
+    <textarea id="mesaj" name="mesaj"></textarea>
+    <div></div>
+</body>
+
+</html>
